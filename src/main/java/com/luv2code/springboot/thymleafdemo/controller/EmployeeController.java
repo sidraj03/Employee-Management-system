@@ -13,7 +13,7 @@ import com.luv2code.springboot.thymleafdemo.entity.Employee;
 import com.luv2code.springboot.thymleafdemo.service.EmployeeService;
 
 @Controller
-//@RequestMapping(value={"/employees"})
+@RequestMapping(value={"/employees"})
 public class EmployeeController {
 
 	private EmployeeService employeeService;
@@ -31,7 +31,7 @@ public class EmployeeController {
 //		//add to the spring model
 //		theModel.addAttribute("employees",theEmployees);
 		
-		return "/emplyees/list-employees";
+		return "/employees/list-employees";
 	}
    	
 //	@GetMapping("/showFormForAdd")
