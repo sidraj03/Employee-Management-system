@@ -31,7 +31,7 @@ public class EmployeeController {
 //		//add to the spring model
 //		theModel.addAttribute("employees",theEmployees);
 		
-		return "/employees/list-employees";
+		return "/employee-management-system/src/main/resources/templates/employees/list-employees.html";
 	}
    	
 //	@GetMapping("/showFormForAdd")
