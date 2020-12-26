@@ -26,31 +26,31 @@ public class EmployeeController {
 	@GetMapping("/list")
 	public String listEmployees(Model theModel) {
 //		//get employees from db
-//		List<Employee> theEmployees=employeeService.findAll();
-//		
-//		//add to the spring model
-//		theModel.addAttribute("employees",theEmployees);
+		List<Employee> theEmployees=employeeService.findAll();
+		
+		//add to the spring model
+		theModel.addAttribute("employees",theEmployees);
 		
 		return "list-employees";
 	}
    	
-//	@GetMapping("/showFormForAdd")
-//	public String showFormForAdd(Model theModel)
-//	{
-//		//create model attribute to bind the form data
-//		Employee theEmployee=new Employee();
-//		
-//		theModel.addAttribute("employee",theEmployee);
-//		
-//		return"/employees/employee-form";
-//	}
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model theModel)
+	{
+		//create model attribute to bind the form data
+		Employee theEmployee=new Employee();
+		
+		theModel.addAttribute("employee",theEmployee);
+		
+		return"employee-form";
+	}
 //	
-//	@PostMapping("/save")
-//	public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
-//		
-//		//save the employee
-//		employeeService.save(theEmployee);
-//		//use a redirect to prevent duplicate submission
-//		return "redirect:/employees/list";
-//	}
+	@PostMapping("/save")
+	public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
+		
+		//save the employee
+		employeeService.save(theEmployee);
+		//use a redirect to prevent duplicate submission
+		return "redirect:/list";
+	}
 }
