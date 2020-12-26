@@ -13,7 +13,7 @@ import com.luv2code.springboot.thymleafdemo.entity.Employee;
 import com.luv2code.springboot.thymleafdemo.service.EmployeeService;
 
 @Controller
-@RequestMapping(value={"/employees"})
+//@RequestMapping(value={"/employees"})
 public class EmployeeController {
 
 	private EmployeeService employeeService;
@@ -31,26 +31,26 @@ public class EmployeeController {
 //		//add to the spring model
 //		theModel.addAttribute("employees",theEmployees);
 		
-		return "/employees/list-employees";
+		return "/emplyees/list-employees";
 	}
    	
-	@GetMapping("/showFormForAdd")
-	public String showFormForAdd(Model theModel)
-	{
-		//create model attribute to bind the form data
-		Employee theEmployee=new Employee();
-		
-		theModel.addAttribute("employee",theEmployee);
-		
-		return"/employees/employee-form";
-	}
-	
-	@PostMapping("/save")
-	public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
-		
-		//save the employee
-		employeeService.save(theEmployee);
-		//use a redirect to prevent duplicate submission
-		return "redirect:/employees/list";
-	}
+//	@GetMapping("/showFormForAdd")
+//	public String showFormForAdd(Model theModel)
+//	{
+//		//create model attribute to bind the form data
+//		Employee theEmployee=new Employee();
+//		
+//		theModel.addAttribute("employee",theEmployee);
+//		
+//		return"/employees/employee-form";
+//	}
+//	
+//	@PostMapping("/save")
+//	public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
+//		
+//		//save the employee
+//		employeeService.save(theEmployee);
+//		//use a redirect to prevent duplicate submission
+//		return "redirect:/employees/list";
+//	}
 }
