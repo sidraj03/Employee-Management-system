@@ -25,11 +25,11 @@ public class EmployeeController {
 	//add mapping for "/list"
 	@GetMapping("/list")
 	public String listEmployees(Model theModel) {
-		//get employees from db
-		List<Employee> theEmployees=employeeService.findAll();
-		
-		//add to the spring model
-		theModel.addAttribute("employees",theEmployees);
+//		//get employees from db
+//		List<Employee> theEmployees=employeeService.findAll();
+//		
+//		//add to the spring model
+//		theModel.addAttribute("employees",theEmployees);
 		
 		return "/employees/list-employees";
 	}
